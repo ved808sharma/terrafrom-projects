@@ -8,7 +8,7 @@ resource "aws_nat_gateway" "public_nat_gw_az1" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_internet_gateway.igw.id]
+  depends_on = [aws_internet_gateway.igw]
 }
 
 resource "aws_nat_gateway" "public_nat_gw_az2" {
@@ -21,5 +21,5 @@ resource "aws_nat_gateway" "public_nat_gw_az2" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_internet_gateway.igw.id]
+  depends_on = [aws_internet_gateway.igw]
 }
